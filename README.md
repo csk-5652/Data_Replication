@@ -1,7 +1,7 @@
 # Data_Replication
 Backup + Mail_alert Powershell Script
 
-Variable Need to change  :-
+
 
 $source = # Source location
 
