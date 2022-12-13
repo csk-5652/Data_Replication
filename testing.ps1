@@ -16,10 +16,10 @@ $full_notices = 1
 
 $date = Get-Date -UFormat "%m%d%y"
 $appname = "test"  #Appname can be anything
-$source = "C:\Users\Chinmay\Downloads\source" #need to change
-$destination = "C:\Users\Chinmay\Downloads\destination" #need to Change
+$source = "C:\Users\Csk\Downloads\source" #need to change
+$destination = "C:\Users\Csk\Downloads\destination" #need to Change
 $logfile = "$appname-backup_log-$date.txt"
-$logs_folder = "C:\Users\Chinmay\Downloads\log_folder"  #need to change
+$logs_folder = "C:\Users\Csk\Downloads\log_folder"  #need to change
 $robocopyaction = @("/E","/np")
 $robocopyoptions = @("/R:3","/W:1","/mt")
 $robocopylog = @("/log+:$logs_folder\$logfile")
@@ -31,9 +31,9 @@ $host_name= hostname
 
 # Function for sending mail
 function sendMail($message){
-    $EmailFrom = "chinmaykadam.stud@vivacollege.org"  #need to change
-    $EmailTo = "chinmay@shimadzu.in"                  #need to change
-    $Subject = "Backup"
+    $EmailFrom = "Example@gmail.com"  #need to change
+    $EmailTo = "Example2@gmail.com"   #need to change
+    $Subject = "Backup"      #Can be anything
     $Body= @"
     <h1 style="color: green;">
         Backup Alert Notification
@@ -65,7 +65,7 @@ function sendMail($message){
     $smtp = new-object Net.Mail.SmtpClient("smtp.gmail.com", 25) 
     $smtp.EnableSsl = $true
     #Need to chnage credentials ("Example@gmail.com","Passoword")
-    $smtp.Credentials = New-Object System.Net.NetworkCredential("chinmaykadam.stud@vivacollege.org", "chinmay_viva@123")   
+    $smtp.Credentials = New-Object System.Net.NetworkCredential("Example@gmail.com", "***********")   
     $smtp.Send($message)
 
 
